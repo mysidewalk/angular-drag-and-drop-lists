@@ -1,10 +1,9 @@
 /**
- * angular-drag-and-drop-lists v2.1.3
+ * angular-drag-and-drop-lists v2.1.4
  *
  * Copyright (c) 2014 Marcel Juenemann marcel@juenemann.cc
  * Copyright (c) 2014-2017 Google Inc.
  * https://github.com/marceljuenemann/angular-drag-and-drop-lists
- * Modified work at https://github.com/marceljuenemann/angular-drag-and-drop-lists
  *
  * License: MIT
  */
