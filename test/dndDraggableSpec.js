@@ -99,7 +99,8 @@ describe('dndDraggable', function() {
     });
 
     it('sets the dragImage if event was triggered on a dnd-handle', function() {
-      var dragstart = Dragstart.on(element, {allowSetDragImage: true, dndHandle: true});
+      const target = document.createElement('div');
+      var dragstart = Dragstart.on(element, {allowSetDragImage: true, dndHandle: true, target });
       expect(dragstart.dragImage).toBe(element[0]);
     });
   });

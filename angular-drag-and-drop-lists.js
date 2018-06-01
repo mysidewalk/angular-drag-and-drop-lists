@@ -1,5 +1,5 @@
 /**
- * angular-drag-and-drop-lists v2.1.0-mysw.2
+ * angular-drag-and-drop-lists v2.1.0-mysw.3
  *
  * Copyright (c) 2014 Marcel Juenemann marcel@juenemann.cc
  * Copyright (c) 2014-2017 Google Inc.
@@ -133,7 +133,8 @@
 
         // Try setting a proper drag image if triggered on a dnd-handle (won't work in IE).
         if (event._dndHandle && event.dataTransfer.setDragImage) {
-          var dndHandle = angular.element(event.srcElement)[0];
+          var dndElement = event.srcElement || event.target;
+          var dndHandle = angular.element(dndElement)[0];
           event.dataTransfer.setDragImage(element[0], 0, 0);
           var elem = angular.element(element)[0];
           var offsetX =  elem.offsetWidth - (dndHandle.offsetWidth / 2);
