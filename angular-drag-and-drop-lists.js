@@ -1,5 +1,5 @@
 /**
- * angular-drag-and-drop-lists v2.1.0-mysw.3
+ * angular-drag-and-drop-lists v2.1.0-mysw.4
  *
  * Copyright (c) 2014 Marcel Juenemann marcel@juenemann.cc
  * Copyright (c) 2014-2017 Google Inc.
@@ -549,7 +549,13 @@
        * object needs to be inserted
        */
       function getPlaceholderIndex() {
-        return Array.prototype.indexOf.call(listNode.children, placeholderNode);
+        var visibleChildren = [];
+        for (var i = 0; i < listNode.children.length; i++) {
+            if (listNode.children[i].offsetParent !== null) {
+                visibleChildren.push(listNode.children[i]);
+            }
+        }
+        return Array.prototype.indexOf.call(visibleChildren, placeholderNode);
       }
 
       /**
